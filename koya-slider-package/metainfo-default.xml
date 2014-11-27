@@ -1,0 +1,73 @@
+<metainfo>
+  <schemaVersion>2.0</schemaVersion>
+  <application>
+    <name>KAFKA</name>
+    <comment>Scalable High-thoughput Distributed Message Queue</comment>
+    <version>${kafka.version}</version>
+    <exportedConfigs>None</exportedConfigs>
+
+    <components>
+      <component>
+        <name>BROKER0</name>
+        <category>MASTER</category>
+        <minInstanceCount>1</minInstanceCount>
+        <!--componentExports>
+          <componentExport>
+            <name>host_port</name>
+            <value>${THIS_HOST}:${site.global.listen_port}</value>
+          </componentExport>
+        </componentExports-->
+        <commandScript>
+          <script>scripts/kafka.py</script>
+          <scriptType>PYTHON</scriptType>
+        </commandScript>
+      </component>
+      <component>
+        <name>BROKER1</name>
+        <category>MASTER</category>
+        <minInstanceCount>1</minInstanceCount>
+        <!--componentExports>
+          <componentExport>
+            <name>host_port</name>
+            <value>${THIS_HOST}:${site.global.listen_port}</value>
+          </componentExport>
+        </componentExports-->
+        <commandScript>
+          <script>scripts/kafka.py</script>
+          <scriptType>PYTHON</scriptType>
+        </commandScript>
+      </component>
+    </components>
+    
+    <configFiles>
+      <configFile>
+        <type>xml</type>
+        <fileName>BROKER0.xml</fileName>
+        <dictionaryName>BROKER0</dictionaryName>
+      </configFile>
+      <configFile>
+        <type>xml</type>
+        <fileName>BROKER1.xml</fileName>
+        <dictionaryName>BROKER1</dictionaryName>
+      </configFile>
+      <configFile>
+        <type>xml</type>
+        <fileName>BROKER-COMMON.xml</fileName>
+        <dictionaryName>BROKER-COMMON</dictionaryName>
+      </configFile>
+    </configFiles>
+
+    <osSpecifics>
+      <osSpecific>
+        <osType>any</osType>
+        <packages>
+          <package>
+            <type>tarball</type>
+            <name>files/${kafka.version}.tgz</name>
+          </package>
+        </packages>
+      </osSpecific>
+    </osSpecifics>
+
+  </application>
+</metainfo>

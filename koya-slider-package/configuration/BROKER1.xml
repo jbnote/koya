@@ -1,0 +1,6 @@
+<configuration>
+   <property>
+      <name>broker.id</name>
+      <value>1</value>
+   </property>
+<configuration>
