@@ -15,16 +15,11 @@
   <description>A package of koya on slider</description>
 
   <build>
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptor>src/assembly/koya.xml</descriptor>
-          <appendAssemblyId>false</appendAssemblyId>
-          <finalName>${app.package.name}</finalName>
-        </configuration>
+        <version>2.5.4</version>
         <executions>
           <execution>
             <id>build-app-package</id>
@@ -32,7 +27,26 @@
             <goals>
               <goal>single</goal>
             </goals>
-          </execution>
+            <configuration>
+              <descriptor>src/assembly/koya-app-package.xml</descriptor>
+              <appendAssemblyId>false</appendAssemblyId>
+              <finalName>${app.package.name}</finalName>
+            </configuration>
+          </execution> 
+          <execution>
+           <id>build-installer</id>
+           <phase>package</phase> 
+           <goals>
+             <goal>single</goal> 
+           </goals>
+           <configuration>
+             <descriptor>../assembly.xml</descriptor>
+             <appendAssemblyId>false</appendAssemblyId>
+             <finalName>koya</finalName>
+             <attach>false</attach>
+           </configuration>
+         </execution>
+
         </executions>
       </plugin>
     </plugins>
