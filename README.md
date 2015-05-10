@@ -110,7 +110,7 @@ Replicate the per broker:
 
 ####metainfo.xml
 
-This file is part of the package and assumes a maximum of 10 brokers. If you need more, modify the [source](koya-slider-package/metainfo-default.xml) prior to building the package.
+This file is part of the package and assumes a maximum of 10 brokers. If you require more, modify [metainfo-default.xml](koya-slider-package/metainfo-default.xml) and specify the --metainfo option with the slider create command when deploying the package.
 
 More information about the application configuration can be found [here](http://slider.incubator.apache.org/docs/configuration/core.html).
 
