@@ -27,7 +27,7 @@
   <description>Kafka on yarn</description>
 
   <properties>
-    <slider.version>0.60.0-incubating</slider.version>
+    <slider.version>0.80.0-incubating</slider.version>
   </properties>
   <modules>
     <module>slider</module>
