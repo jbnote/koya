@@ -40,21 +40,6 @@
     </components>
     
     <configFiles>
-      <configFile>
-        <type>xml</type>
-        <fileName>BROKER0.xml</fileName>
-        <dictionaryName>BROKER0</dictionaryName>
-      </configFile>
-      <configFile>
-        <type>xml</type>
-        <fileName>BROKER1.xml</fileName>
-        <dictionaryName>BROKER1</dictionaryName>
-      </configFile>
-      <configFile>
-        <type>xml</type>
-        <fileName>BROKER-COMMON.xml</fileName>
-        <dictionaryName>BROKER-COMMON</dictionaryName>
-      </configFile>
     </configFiles>
 
     <osSpecifics>

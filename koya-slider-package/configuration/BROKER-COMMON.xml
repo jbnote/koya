@@ -1,6 +1,0 @@
-<configuration>
-   <property>
-      <name>zookeeper.connect</name>
-      <value>node0:2181,node1:2181,node2:2181</value>
-   </property>
-<configuration>
