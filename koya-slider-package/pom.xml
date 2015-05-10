@@ -22,7 +22,7 @@
         <version>2.5.4</version>
         <executions>
           <execution>
-            <id>build-app-package</id>
+            <id>app-package</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
@@ -34,7 +34,7 @@
             </configuration>
           </execution> 
           <execution>
-           <id>build-installer</id>
+           <id>package-with-slider</id>
            <phase>package</phase> 
            <goals>
              <goal>single</goal> 
@@ -42,7 +42,7 @@
            <configuration>
              <descriptor>../assembly.xml</descriptor>
              <appendAssemblyId>false</appendAssemblyId>
-             <finalName>koya</finalName>
+             <finalName>koya-with-slider</finalName>
              <attach>false</attach>
            </configuration>
          </execution>
