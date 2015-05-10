@@ -24,9 +24,10 @@ Ensure the Slider version you checked out matches ${slider.version} in pom.xml
 ```sh
 mvn clean install -DskipTests -Dkafka.src=path/to/kafka_2.10-0.8.1.1.tgz -Dkafka.version=kafka_2.10-0.8.1.1
 ```
+Artifacts:
 
-Archive with embedded Slider: __`target/koya-with-slider.zip`__
-Separate Slider application package: __`target/koya-slider-package-0.1.zip`__
+ - Archive with embedded Slider: __`target/koya-with-slider.zip`__
+ - Separate Slider application package: __`target/koya-slider-package-0.1.zip`__
 
 ###Installation
 
@@ -54,7 +55,7 @@ More information regarding Slider client configuration refer to http://slider.in
 
 ### Configure KOYA application package
 
-Before the Kafka cluster can be launched, the brokers need to be defined. Currently Slider does not support [configuration properties on an instance level](https://issues.apache.org/jira/browse/SLIDER-851), therefore each broker has to be configured as a component.
+Before the Kafka cluster can be launched, the brokers need to be defined. Currently Slider does not support [configuration properties at instance level](https://issues.apache.org/jira/browse/SLIDER-851), therefore each broker has to be configured as a component.
 
 If you use the full archive, the configuration file templates are already in your working directory. Otherwise extract them from the Slider package.
 
