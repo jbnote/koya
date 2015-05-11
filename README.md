@@ -20,7 +20,8 @@ Checkout Slider code (https://github.com/apache/incubator-slider)
 git clone git@github.com:apache/incubator-slider.git
 git checkout -b slider-0.80.0-incubating remotes/origin/releases/slider-0.80.0-incubating
 ```
-Ensure the Slider version you checked out matches ${slider.version} in pom.xml
+The Slider version you checked out needs to match ${slider.version} in pom.xml
+
 Create symbolic link to Slider source code within the KOYA repository:
 ```sh
 ln -s /path/to/repo/incubator-slider/ slider
