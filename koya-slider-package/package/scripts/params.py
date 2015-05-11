@@ -14,7 +14,5 @@ conf_dir = format("{app_root}/config")
 server_prop=config['configurations']['server']['content']
 
 componentName = config['componentName']
+componentConfig = config['configurations'][componentName]
 
-
-componentConfig = config['configurations']['BROKER-COMMON']
-componentConfig.update(config['configurations'][componentName])
