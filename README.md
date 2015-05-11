@@ -13,14 +13,20 @@ JIRA: https://issues.apache.org/jira/browse/KAFKA-1754
 Kafka as YARN application using Slider
 -----------------------------------------------
 
-### Prerequisite
-
-1. Checkout Slider code (https://github.com/apache/incubator-slider)
-2. Create symbolic link to Slider source code (`ln -s /path/to/repo/incubator-slider/ slider`) 
-3. Download Kafka binary package (http://kafka.apache.org/downloads.html)
-
 ### Build
+
+Checkout Slider code (https://github.com/apache/incubator-slider) 
+```sh
+git clone git@github.com:apache/incubator-slider.git
+git checkout -b slider-0.80.0-incubating remotes/origin/releases/slider-0.80.0-incubating
+```
 Ensure the Slider version you checked out matches ${slider.version} in pom.xml
+Create symbolic link to Slider source code within the KOYA repository:
+```sh
+ln -s /path/to/repo/incubator-slider/ slider
+```
+Download Kafka binary package (http://kafka.apache.org/downloads.html)
+
 ```sh
 mvn clean install -DskipTests -Dkafka.src=path/to/kafka_2.10-0.8.1.1.tgz -Dkafka.version=kafka_2.10-0.8.1.1
 ```
