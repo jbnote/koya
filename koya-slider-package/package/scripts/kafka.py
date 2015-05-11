@@ -30,23 +30,32 @@ class Kafka(Script):
     for key in os.environ.keys():
       logger.info("%10s %s \n" % (key,os.environ[key]))
     pass
-    
+
+    # This updating thing is changing files in-place and it really
+    # should not (static cache)
+
     # For kafka 0.8.1.1, there is no way to set the log dir to location other than params.app_root + "/logs"
     if(params.kafka_version.find("0.8.1.1") != -1):
       os.symlink(params.app_root + "/logs", params.app_log_dir + "/kafka")
     else:
       kafkaLogConfig = {"kafka.logs.dir" : params.app_log_dir + "/kafka"}
       util.updating(params.app_root + "/config/log4j.properties", kafkaLogConfig)
+#      File(format("{params.app_root}/conf/log4j.properties"),
+#           owner=params.app_user,
+#           content=InlineTemplate(param.log4j_prop))
     pass
-    
+
     # update the broker properties for different brokers
     util.updating(params.app_root + "/config/server.properties", params.componentConfig)
-    
+    File(format("{params.conf_dir}/server.properties"),
+         owner=params.app_user,
+         content=InlineTemplate(params.server_prop))
+
     # execute the process
     process_cmd = format("{app_root}/bin/kafka-server-start.sh {app_root}/config/server.properties")
     Execute(process_cmd,
         user=params.app_user,
-        logoutput=False,
+        logoutput=True,
         wait_for_finish=False,
         pid_file=params.pid_file 
     )
