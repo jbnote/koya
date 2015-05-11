@@ -113,8 +113,13 @@
         </commandScript>
       </component>
     </components>
-    
+
     <configFiles>
+      <configFile>
+        <type>properties</type>
+        <fileName>server.properties</fileName>
+        <dictionaryName>server</dictionaryName>
+      </configFile>
     </configFiles>
 
     <osSpecifics>
