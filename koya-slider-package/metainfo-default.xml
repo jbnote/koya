@@ -25,13 +25,13 @@
       </component>
     </components>
 
-    <!--configFiles>
+    <configFiles>
       <configFile>
-        <type>properties</type>
-        <fileName>server.properties</fileName>
-        <dictionaryName>server</dictionaryName>
+        <type>xml</type>
+        <fileName>broker.xml</fileName>
+        <dictionaryName>broker</dictionaryName>
       </configFile>
-    </configFiles-->
+    </configFiles>
 
     <osSpecifics>
       <osSpecific>
