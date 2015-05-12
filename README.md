@@ -79,11 +79,11 @@ Adjust following properties in the global section:
     "site.global.xms_val": "128m",
     "site.broker.zookeeper.connect": "${ZK_HOST}"
 ```
-Above will be used to configure server.properties and launch the Kafka server(s).
+Above will be used to configure server.properties and launch the Kafka server(s). All properties prefixed with `site.broker.` will be set in the server.properties file supplied with the Kafka archive. Only non-default settings need to be defined here.  
 
 ####resources.json
 
-Configure the number of servers and other resource requirements for the brokers:
+Configure the number of servers and other resource requirements:
 ```
   "components" : {
     "broker" : {
