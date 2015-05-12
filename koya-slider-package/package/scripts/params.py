@@ -11,10 +11,6 @@ app_log_dir = config['configurations']['global']['app_log_dir']
 kafka_version = config['configurations']['global']['kafka_version']
 
 conf_dir = format("{app_root}/config")
-server_prop=config['configurations']['server']['content']
+brokerConfig = config['configurations']['broker'].copy()
+brokerConfig['broker.id'] = int(config['configurations']['global']['app_container_tag']) - 1
 
-componentName = config['componentName']
-
-
-componentConfig = config['configurations']['BROKER-COMMON']
-componentConfig.update(config['configurations'][componentName])

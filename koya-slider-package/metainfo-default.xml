@@ -8,9 +8,10 @@
 
     <components>
       <component>
-        <name>BROKER0</name>
+        <name>broker</name>
         <category>MASTER</category>
         <minInstanceCount>1</minInstanceCount>
+        <exportedConfigs>broker</exportedConfigs>
         <!--componentExports>
           <componentExport>
             <name>host_port</name>
@@ -24,13 +25,13 @@
       </component>
     </components>
 
-    <configFiles>
+    <!--configFiles>
       <configFile>
         <type>properties</type>
         <fileName>server.properties</fileName>
         <dictionaryName>server</dictionaryName>
       </configFile>
-    </configFiles>
+    </configFiles-->
 
     <osSpecifics>
       <osSpecific>

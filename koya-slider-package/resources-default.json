@@ -7,7 +7,7 @@
     "yarn.container.failure.window.hours":"1"
   },
   "components" : {
-    "BROKER0" : {
+    "broker" : {
       "yarn.role.priority" : "1",
       "yarn.component.instances" : "10",
       "yarn.memory" : "768",

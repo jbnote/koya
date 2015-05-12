@@ -20,11 +20,11 @@ class Kafka(Script):
     import params
     env.set_params(params)
     self.configure(env)
-    
+
     # log the component configuration
     ppp = pprint.PrettyPrinter(indent=4)
-    logger.info("Component Config: " + ppp.pformat(params.componentConfig))
-    
+    logger.info("broker component config: " + ppp.pformat(params.brokerConfig))
+
     # log the environment variables
     logger.info("Env Variables:")
     for key in os.environ.keys():
@@ -46,10 +46,10 @@ class Kafka(Script):
     pass
 
     # update the broker properties for different brokers
-    util.updating(params.app_root + "/config/server.properties", params.componentConfig)
-    File(format("{params.conf_dir}/server.properties"),
-         owner=params.app_user,
-         content=InlineTemplate(params.server_prop))
+    util.updating(params.app_root + "/config/server.properties", params.brokerConfig)
+    #File(format("{params.conf_dir}/server.properties"),
+    #     owner=params.app_user,
+    #     content=InlineTemplate(params.server_prop))
 
     # execute the process
     process_cmd = format("{app_root}/bin/kafka-server-start.sh {app_root}/config/server.properties")
@@ -57,7 +57,7 @@ class Kafka(Script):
         user=params.app_user,
         logoutput=True,
         wait_for_finish=False,
-        pid_file=params.pid_file 
+        pid_file=params.pid_file
     )
 
   def stop(self, env):

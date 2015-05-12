@@ -6,6 +6,7 @@
     "agent.conf": ".slider/agent/conf/agent.ini",
     "application.def": ".slider/package/KOYA/koya-slider-package-${project.version}.zip",
     "java_home": "${JAVA_HOME}",
+    "system_configs": "broker",
 
     "site.global.app_user": "${USER_NAME}",
     "site.global.app_root": "${AGENT_WORK_ROOT}/app/install/${kafka.version}",
@@ -16,11 +17,11 @@
     "site.global.xmx_val": "256m",
     "site.global.xms_val": "128m",
 
-    "site.server.instance.name": "${USER}/${CLUSTER_NAME}",
-    "site.server.zookeeper.connect": "${ZK_HOST}"
+    "site.broker.instance.name": "${USER}/${CLUSTER_NAME}",
+    "site.broker.zookeeper.connect": "${ZK_HOST}"
   },
   "components": {
-    "BROKER0": {
+    "broker": {
       "site.global.xmx_val": "512m",
       "site.global.xms_val": "128m"
     },
