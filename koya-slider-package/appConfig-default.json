@@ -16,8 +16,8 @@
     "site.global.xmx_val": "256m",
     "site.global.xms_val": "128m",
 
-    "site.server.instance.name": "${USER}/${CLUSTER_NAME}",
-    "site.server.zookeeper.connect": "${ZK_HOST}"
+    "site.global.instance.name": "${USER}/${CLUSTER_NAME}",
+    "site.global.zookeeper": "${ZK_HOST}"
   },
   "components": {
     "BROKER0": {

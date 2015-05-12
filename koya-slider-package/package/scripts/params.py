@@ -11,8 +11,7 @@ app_log_dir = config['configurations']['global']['app_log_dir']
 kafka_version = config['configurations']['global']['kafka_version']
 
 conf_dir = format("{app_root}/config")
-server_prop=config['configurations']['server']['content']
+server_config=config['configurations']['server']
+server_prop=server_config['content']
 
 componentName = config['componentName']
-componentConfig = config['configurations'][componentName]
-

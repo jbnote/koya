@@ -23,7 +23,6 @@ class Kafka(Script):
     
     # log the component configuration
     ppp = pprint.PrettyPrinter(indent=4)
-    logger.info("Component Config: " + ppp.pformat(params.componentConfig))
     
     # log the environment variables
     logger.info("Env Variables:")
@@ -46,7 +45,6 @@ class Kafka(Script):
     pass
 
     # update the broker properties for different brokers
-    util.updating(params.app_root + "/config/server.properties", params.componentConfig)
     File(format("{params.conf_dir}/server.properties"),
          owner=params.app_user,
          content=InlineTemplate(params.server_prop))
