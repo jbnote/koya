@@ -9,7 +9,7 @@
   "components" : {
     "broker" : {
       "yarn.role.priority" : "1",
-      "yarn.component.instances" : "10",
+      "yarn.component.instances" : "5",
       "yarn.memory" : "768",
       "yarn.vcores" : "1",
       "yarn.component.placement.policy":"1"
