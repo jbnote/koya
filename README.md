@@ -45,10 +45,10 @@ To use the archive with embedded Slider, copy it to the machine from which you l
 If the environment variables `HADOOP_CONF_DIR` or `JAVA_HOME` are not already defined through your Hadoop installation, you can export them in  `slider-0.80.0-incubating/conf/slider-env.sh` 
 
 Example for CDH 5.4:
- 
-`export HADOOP_CONF_DIR=/etc/hadoop/conf`
-`export JAVA_HOME=/usr/java/jdk1.7.0_45-cloudera`
-
+``` 
+export HADOOP_CONF_DIR=/etc/hadoop/conf
+export JAVA_HOME=/usr/java/jdk1.7.0_45-cloudera
+```
 If the registry ZooKeeper quorum was not already configured through Hadoop, modify `slider-0.80.0-incubating/conf/slider-client.xml`: 
 ```
   <property>
@@ -66,59 +66,34 @@ Before the Kafka cluster can be launched, the brokers need to be defined. Curren
 
 If you use the full archive, the configuration file templates are already in your working directory. Otherwise extract them from the Slider package.
 
-####Configure appConfig.json
+####appConfig.json
 
-Define each broker as component, for example:
+Extract the packaged configuration files you are going to customize:
 ```
-  "components": {
-    "BROKER0": {
-    },
-    "BROKER1": {
-    },
+unzip koya-slider-package-0.1.zip appConfig.json resources.json 
 ```
-Modify required properties in the global section: 
+Adjust following properties in the global section: 
 ```
     "application.def": "koya-slider-package-0.1.zip",
-    "java_home": "/usr/lib/jvm/java-7-oracle/",
-    "system_configs": "BROKER-COMMON,BROKER0,BROKER1",
-    "package_list": "files/kafka_2.10-0.8.1.1.tgz",
-
-    "site.global.app_root": "${AGENT_WORK_ROOT}/app/install/kafka_2.10-0.8.1.1",
-    "site.global.kafka_version": "kafka_2.10-0.8.1.1",
     "site.global.xmx_val": "256m",
     "site.global.xms_val": "128m",
-
-    "site.BROKER0.broker.id": "0",
-    "site.BROKER1.broker.id": "1",
-    "site.BROKER-COMMON.zookeeper.connect": "127.0.0.1:2181"
+    "site.broker.zookeeper.connect": "${ZK_HOST}"
 ```
-These settings will be used to configure server.properties and launch Kafka.
+Above will be used to configure server.properties and launch the Kafka server(s).
 
-####Configure resources.json
+####resources.json
 
-Replicate the per broker:
+Configure the number of servers and other resource requirements for the brokers:
 ```
   "components" : {
-    "BROKER0" : {
+    "broker" : {
       "yarn.role.priority" : "1",
-      "yarn.component.instances" : "1",
+      "yarn.component.instances" : "5",
       "yarn.memory" : "768",
       "yarn.vcores" : "1",
       "yarn.component.placement.policy":"1"
-    },
-    "BROKER1" : {
-      "yarn.role.priority" : "2",
-      "yarn.component.instances" : "1",
-      "yarn.memory" : "768",
-      "yarn.vcores" : "1",
-      "yarn.component.placement.policy":"1"
-    },
+    }
 ```
-
-####metainfo.xml
-
-This file is part of the package and assumes a maximum of 10 brokers. If you require more, modify [metainfo-default.xml](koya-slider-package/metainfo-default.xml) and specify the --metainfo option with the slider create command when deploying the package.
-
 More information about the application configuration can be found [here](http://slider.incubator.apache.org/docs/configuration/core.html).
 
 ### Deploy KOYA Cluster
