@@ -3,7 +3,6 @@
   "metadata": {
   },
   "global": {
-    "agent.conf": ".slider/agent/conf/agent.ini",
     "application.def": ".slider/package/KOYA/koya-slider-package-${project.version}.zip",
     "java_home": "${JAVA_HOME}",
     "system_configs": "broker",
