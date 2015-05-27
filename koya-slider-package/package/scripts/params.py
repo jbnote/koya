@@ -11,7 +11,10 @@ app_log_dir = config['configurations']['global']['app_log_dir']
 kafka_version = config['configurations']['global']['kafka_version']
 
 conf_dir = format("{app_root}/config")
-server_config=config['configurations']['server']
+added_server_config=config['configurations']['server']
+server_config=dict(line.strip().split('=') for line in open(format("{conf_dir}/server.properties")) if not (line.startswith('#') or re.match(r'^\s*$', line)))
+server_config.update(added_server_config)
 server_prop=server_config['content']
+del server_config['content']
 
 componentName = config['componentName']
