@@ -16,7 +16,7 @@
   <property>
     <name>content</name>
     <value>
-{% for k,v in broker_config.iteritems() %}{{k}}={{v}}
+{% for k,v in broker_config|dictsort %}{{k}}={{v}}
 {% endfor %}
     </value>
   </property>
