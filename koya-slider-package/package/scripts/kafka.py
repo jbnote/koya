@@ -47,12 +47,13 @@ class Kafka(Script):
 
 
     # update the broker properties for different brokers
-    File(format("{params.conf_dir}/server.properties"),
+    broker_conf_file=format("{params.conf_dir}/server.slider.properties")
+    File(broker_conf_file,
          owner=params.app_user,
          content=InlineTemplate(params.broker_prop))
 
     # execute the process
-    process_cmd = format("{app_root}/bin/kafka-server-start.sh {app_root}/config/server.properties")
+    process_cmd = format("{app_root}/bin/kafka-server-start.sh {broker_conf_file}")
     os.environ['LOG_DIR'] = params.app_log_dir + "/kafka"
     HEAP_OPT = ""
     if params.xmx:
