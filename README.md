@@ -1,6 +1,8 @@
 Kafka On YARN (KOYA)
 ====================
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/DataTorrent/koya?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 ### Goals
 
   * Use capabilities of YARN for Kafka broker management
