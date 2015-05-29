@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>metadata.broker.list</name>
+    <value></value>
+  </property>
+  <property>
+    <name>client.id</name>
+    <value>koya-${@//site/global/app_container_tag}</value>
+  </property>
+  <property>
+    <name>content</name>
+    <value>
+{% for k,v in producer_config|dictsort %}{{k}}={{v}}
+{% endfor %}
+    </value>
+  </property>
+</configuration>

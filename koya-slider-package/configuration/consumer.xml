@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>zookeeper.connect</name>
+    <value>${@//site/global/zookeeper}/kafka/${@//site/global/instance.name}</value>
+  </property>
+  <property>
+    <name>group.id</name>
+    <value>koya-consumer-group</value>
+  </property>
+  <property>
+    <name>content</name>
+    <value>
+{% for k,v in consumer_config|dictsort %}{{k}}={{v}}
+{% endfor %}
+    </value>
+  </property>
+</configuration>

@@ -31,6 +31,16 @@
         <fileName>broker.xml</fileName>
         <dictionaryName>broker</dictionaryName>
       </configFile>
+      <configFile>
+        <type>xml</type>
+        <fileName>producer.xml</fileName>
+        <dictionaryName>producer</dictionaryName>
+      </configFile>
+      <configFile>
+        <type>xml</type>
+        <fileName>consumer.xml</fileName>
+        <dictionaryName>consumer</dictionaryName>
+      </configFile>
     </configFiles>
 
     <osSpecifics>
