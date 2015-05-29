@@ -22,11 +22,21 @@
       <component>
         <name>KAFKA_BROKER</name>
         <category>SLAVE</category>
-        <minInstanceCount>1</minInstanceCount>
+        <minInstanceCount>0</minInstanceCount>
         <compExports>servers-org.apache.kafka.broker</compExports>
         <exportedConfigs>broker</exportedConfigs>
         <commandScript>
           <script>scripts/kafka.py</script>
+          <scriptType>PYTHON</scriptType>
+        </commandScript>
+      </component>
+      <component>
+        <name>KAFKA_MIRROR</name>
+        <category>SLAVE</category>
+        <minInstanceCount>0</minInstanceCount>
+        <exportedConfigs>mirror</exportedConfigs>
+        <commandScript>
+          <script>scripts/mirror.py</script>
           <scriptType>PYTHON</scriptType>
         </commandScript>
       </component>
@@ -37,6 +47,21 @@
         <type>xml</type>
         <fileName>server.xml</fileName>
         <dictionaryName>server</dictionaryName>
+      </configFile>
+      <configFile>
+        <type>xml</type>
+        <fileName>producer.xml</fileName>
+        <dictionaryName>producer</dictionaryName>
+      </configFile>
+      <configFile>
+        <type>xml</type>
+        <fileName>consumer.xml</fileName>
+        <dictionaryName>consumer</dictionaryName>
+      </configFile>
+      <configFile>
+        <type>xml</type>
+        <fileName>mirror.xml</fileName>
+        <dictionaryName>mirror</dictionaryName>
       </configFile>
     </configFiles>
 

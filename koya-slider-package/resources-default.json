@@ -9,10 +9,16 @@
   "components" : {
     "KAFKA_BROKER" : {
       "yarn.role.priority" : "1",
-      "yarn.component.instances" : "5",
+      "yarn.component.instances" : "2",
       "yarn.memory" : "768",
       "yarn.vcores" : "1",
       "yarn.component.placement.policy":"1"
+    },
+    "KAFKA_MIRROR" : {
+      "yarn.role.priority" : "2",
+      "yarn.component.instances" : "0",
+      "yarn.memory" : "512",
+      "yarn.vcores" : "1"
     },
     "slider-appmaster" : {
     }

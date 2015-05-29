@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>xmx</name>
+    <value>256m</value>
+  </property>
+  <property>
+    <name>xms</name>
+    <value>128m</value>
+  </property>
+  <property>
+    <name>num.streams</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>num.producers</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>queue.size</name>
+    <value>10000</value>
+  </property>
+  <property>
+    <name>whitelist</name>
+    <value>.*</value>
+  </property>
+</configuration>

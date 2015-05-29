@@ -8,4 +8,3 @@ slider create $APPNAME --filesystem hdfs://root --queue dev --template appConfig
 
 
 
-
