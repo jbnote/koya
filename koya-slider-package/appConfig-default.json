@@ -13,11 +13,11 @@
     "site.global.pid_file": "${AGENT_WORK_ROOT}/app/run/koya.pid",
 
     "site.global.kafka_version": "${kafka.version}",
-    "site.global.xmx_val": "512m",
-    "site.global.xms_val": "128m",
+    "site.broker.xmx_val": "512m",
+    "site.broker.xms_val": "128m",
 
-    "site.broker.instance.name": "${USER}/${CLUSTER_NAME}",
-    "site.broker.zookeeper.connect": "${ZK_HOST}"
+    "site.server.instance.name": "${USER}/${CLUSTER_NAME}",
+    "site.server.zookeeper.connect": "${ZK_HOST}"
   },
   "components": {
     "broker": {
