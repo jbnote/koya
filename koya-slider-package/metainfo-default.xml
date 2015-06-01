@@ -6,11 +6,24 @@
     <version>${kafka.version}</version>
     <exportedConfigs>None</exportedConfigs>
 
+    <exportGroups>
+      <exportGroup>
+        <name>servers</name>
+        <exports>
+          <export>
+            <name>org.apache.kafka.broker</name>
+            <value>${KAFKA_BROKER_HOST}:${site.broker.port}</value>
+          </export>
+        </exports>
+      </exportGroup>
+    </exportGroups>
+
     <components>
       <component>
         <name>broker</name>
-        <category>MASTER</category>
+        <category>SLAVE</category>
         <minInstanceCount>1</minInstanceCount>
+        <compExports>servers-org.apache.kafka.broker</compExports>
         <exportedConfigs>broker</exportedConfigs>
         <commandScript>
           <script>scripts/kafka.py</script>

@@ -15,9 +15,10 @@
     "site.global.kafka_version": "${kafka.version}",
     "site.broker.xmx_val": "512m",
     "site.broker.xms_val": "128m",
-
     "site.broker.instance.name": "${USER}/${CLUSTER_NAME}",
-    "site.broker.zookeeper": "${ZK_HOST}"
+    "site.broker.zookeeper": "${ZK_HOST}",
+
+    "site.server.port": "${KAFKA_BROKER.ALLOCATED_PORT}{PER_CONTAINER}"
   },
   "components": {
     "broker": {
