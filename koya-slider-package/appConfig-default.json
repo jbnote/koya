@@ -16,8 +16,8 @@
     "site.broker.xmx_val": "512m",
     "site.broker.xms_val": "128m",
 
-    "site.server.instance.name": "${USER}/${CLUSTER_NAME}",
-    "site.server.zookeeper.connect": "${ZK_HOST}"
+    "site.broker.instance.name": "${USER}/${CLUSTER_NAME}",
+    "site.broker.zookeeper": "${ZK_HOST}"
   },
   "components": {
     "broker": {

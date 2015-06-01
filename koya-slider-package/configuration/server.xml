@@ -3,7 +3,7 @@
 <configuration>
   <property>
     <name>zookeeper.connect</name>
-    <value>${@//site/global/zookeeper}/kafka/${@//site/global/instance.name}</value>
+    <value>${@//site/broker/zookeeper}/kafka/${@//site/broker/instance.name}</value>
   </property>
   <property>
     <name>broker.id</name>
