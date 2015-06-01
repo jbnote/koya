@@ -20,7 +20,7 @@
 
     <components>
       <component>
-        <name>broker</name>
+        <name>KAFKA_BROKER</name>
         <category>SLAVE</category>
         <minInstanceCount>1</minInstanceCount>
         <compExports>servers-org.apache.kafka.broker</compExports>
