@@ -12,7 +12,7 @@
         <exports>
           <export>
             <name>org.apache.kafka.broker</name>
-            <value>${KAFKA_BROKER_HOST}:${site.broker.port}</value>
+            <value>${KAFKA_BROKER_HOST}:${site.server.port}</value>
           </export>
         </exports>
       </exportGroup>
