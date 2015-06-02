@@ -23,7 +23,7 @@ class Kafka(Script):
 
     # log the component configuration
     ppp = pprint.PrettyPrinter(indent=4)
-    logger.info("broker component config: " + ppp.pformat(params.brokerConfig))
+    logger.info("broker component config: " + ppp.pformat(params.broker_config))
 
     # log the environment variables
     logger.info("Env Variables:")
@@ -45,22 +45,19 @@ class Kafka(Script):
 #           content=InlineTemplate(param.log4j_prop))
     pass
 
-
     # update the broker properties for different brokers
-    util.updating(params.app_root + "/config/server.properties", params.brokerConfig)
-    #File(format("{params.conf_dir}/server.properties"),
-    #     owner=params.app_user,
-    #     content=InlineTemplate(params.server_prop))
+    server_conf=format("{params.conf_dir}/server.slider.properties")
+    PropertiesFile(server_conf, properties = params.broker_config, owner=params.app_user)
 
     # execute the process
-    process_cmd = format("{app_root}/bin/kafka-server-start.sh {app_root}/config/server.properties")
+    process_cmd = format("{app_root}/bin/kafka-server-start.sh {server_conf}")
     os.environ['LOG_DIR'] = params.app_log_dir + "/kafka"
     HEAP_OPT = ""
-    if 'xmx_val' in params.brokerConfig:
-        HEAP_OPT = HEAP_OPT + " -Xmx" + params.brokerConfig['xmx_val']
+    if params.xmx:
+        HEAP_OPT = HEAP_OPT + " -Xmx" + params.xmx
     pass
-    if 'xms_val' in params.brokerConfig:
-        HEAP_OPT = HEAP_OPT + " -Xms" + params.brokerConfig['xms_val']
+    if params.xms:
+        HEAP_OPT = HEAP_OPT + " -Xms" + params.xms
     pass
     if HEAP_OPT:
         os.environ['KAFKA_HEAP_OPTS'] = HEAP_OPT

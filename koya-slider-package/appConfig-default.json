@@ -13,16 +13,15 @@
     "site.global.pid_file": "${AGENT_WORK_ROOT}/app/run/koya.pid",
 
     "site.global.kafka_version": "${kafka.version}",
-    "site.global.xmx_val": "256m",
-    "site.global.xms_val": "128m",
-
+    "site.broker.xmx_val": "512m",
+    "site.broker.xms_val": "128m",
     "site.broker.instance.name": "${USER}/${CLUSTER_NAME}",
-    "site.broker.zookeeper.connect": "${ZK_HOST}"
+    "site.broker.zookeeper": "${ZK_HOST}",
+
+    "site.server.port": "${KAFKA_BROKER.ALLOCATED_PORT}{PER_CONTAINER}"
   },
   "components": {
     "broker": {
-      "site.global.xmx_val": "512m",
-      "site.global.xms_val": "128m"
     },
     "slider-appmaster": {
       "jvm.heapsize": "256M"
