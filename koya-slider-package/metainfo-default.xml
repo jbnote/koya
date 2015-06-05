@@ -40,6 +40,16 @@
           <scriptType>PYTHON</scriptType>
         </commandScript>
       </component>
+      <component>
+        <name>KAFKA_REST</name>
+        <category>SLAVE</category>
+        <minInstanceCount>0</minInstanceCount>
+        <exportedConfigs>rest</exportedConfigs>
+        <commandScript>
+          <script>scripts/rest.py</script>
+          <scriptType>PYTHON</scriptType>
+        </commandScript>
+      </component>
     </components>
 
     <configFiles>
