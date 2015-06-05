@@ -17,7 +17,7 @@
     "site.broker.zookeeper": "${ZK_HOST}",
 
     "site.consumer.zookeeper.connect": "10.60.32.120:2181,10.60.32.121:2181,10.60.32.122:2181/kafka_central",
-    "site.producer.metadata.broker.list": "a4-5d-36-fc-ff-70.hpc.criteo.preprod:51023,a4-5d-36-fc-ff-78.hpc.criteo.preprod:53216,"
+    "site.producer.metadata.broker.list": "a4-5d-36-fc-ff-70.hpc.criteo.preprod:51023,a4-5d-36-fc-ff-78.hpc.criteo.preprod:53216"
   },
   "components": {
     "KAFKA_MIRROR": {

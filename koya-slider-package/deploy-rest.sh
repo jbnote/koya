@@ -1,3 +1,3 @@
 #! /bin/bash
 base_dir=$(dirname $0)
-exec $base_dir/deploys-component.sh rest $@
+exec $base_dir/deploy-component.sh rest $@

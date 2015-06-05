@@ -1,4 +1,4 @@
 #! /bin/bash
 
 base_dir=$(dirname $0)
-exec $base_dir/deploys-component.sh mirror $@
+exec $base_dir/deploy-component.sh mirror $@

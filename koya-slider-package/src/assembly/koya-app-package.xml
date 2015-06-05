@@ -43,6 +43,13 @@
       <fileMode>0755</fileMode>
     </file>
     <file>
+      <source>appConfig-rest-default.json</source>
+      <destName>appConfig-rest.json</destName>
+      <outputDirectory>/</outputDirectory>
+      <filtered>true</filtered>
+      <fileMode>0755</fileMode>
+    </file>
+    <file>
       <source>resources-default.json</source>
       <destName>resources.json</destName>
       <outputDirectory>/</outputDirectory>
@@ -52,6 +59,13 @@
     <file>
       <source>resources-mirror-default.json</source>
       <destName>resources-mirror.json</destName>
+      <outputDirectory>/</outputDirectory>
+      <filtered>true</filtered>
+      <fileMode>0755</fileMode>
+    </file>
+    <file>
+      <source>resources-rest-default.json</source>
+      <destName>resources-rest.json</destName>
       <outputDirectory>/</outputDirectory>
       <filtered>true</filtered>
       <fileMode>0755</fileMode>

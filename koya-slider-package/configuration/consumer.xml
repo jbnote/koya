@@ -7,6 +7,6 @@
   </property>
   <property>
     <name>group.id</name>
-    <value>koya-${@//site/global/app_user}</value>
+    <value>koya-mirror-${@//site/global/app_user}</value>
   </property>
 </configuration>

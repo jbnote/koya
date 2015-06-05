@@ -16,7 +16,8 @@
     "site.broker.instance.name": "${USER}/${CLUSTER_NAME}",
     "site.broker.zookeeper": "${ZK_HOST}",
 
-    "site.rest.metadata.broker.list": "a4-5d-36-fc-ff-70.hpc.criteo.preprod:51023,a4-5d-36-fc-ff-78.hpc.criteo.preprod:53216,"
+    "site.kafka-rest.zookeeper.connect": "${@//site/broker/zookeeper}/kafka/jb.note/koya",
+    "site.kafka-rest.bootstrap.servers": "a4-5d-36-fc-ff-70.hpc.criteo.preprod:51023,a4-5d-36-fc-ff-78.hpc.criteo.preprod:53216"
   },
   "components": {
     "KAFKA_REST": {
