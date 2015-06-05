@@ -51,9 +51,9 @@ class MirrorMaker(Script):
     if HEAP_OPTS:
         os.environ['KAFKA_HEAP_OPTS'] = " ".join(HEAP_OPTS)
 
-    os.environ['LOG_DIR'] = params.app_log_dir + "/kafka_mirror"
-    os.environ['DAEMON_MODE'] = "true"
-    os.environ['CONSOLE_OUTPUT_FILE'] = params.app_log_dir + "/kafka.log"
+    os.environ['LOG_DIR'] = params.app_log_dir
+#    os.environ['DAEMON_MODE'] = "true"
+#    os.environ['CONSOLE_OUTPUT_FILE'] = params.app_log_dir + "/kafka.log"
     Execute(process_cmd,
         user=params.app_user,
         logoutput=True,
